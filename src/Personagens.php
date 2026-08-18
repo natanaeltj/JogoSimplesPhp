@@ -1,7 +1,9 @@
 <?php
 declare(strict_types=1);
 
-class Personagens
+namespace Choco\JogoSimplesPhp;
+
+abstract class Personagens
 {
     public int $ataque;
     public float $vida;
@@ -19,4 +21,6 @@ class Personagens
     {
 
     }
+    public function getPoder():array
+    {}
 }

@@ -1,0 +1,11 @@
+{
+    "name": "choco/jogo-simples-php",
+    "autoload": {
+        "psr-4": {
+            "Choco\\JogoSimplesPhp\\": "src/"
+        }
+    },
+    "require": {
+        "symfony/var-dumper": "^8.1"
+    }
+}
