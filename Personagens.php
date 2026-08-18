@@ -8,8 +8,15 @@ class Personagens
     public int $armadura;
     public array $poder;
 
-    public function __construct(int $ataque, float $vida, float $armadura, array $poder);
 
-    public function setAtack(){}
-    public function setPoder(){}
+    public function setAtack(int $ataque, float $vida, int $armadura ):void
+    {
+        $this->ataque = $ataque;
+        $this->vida = $vida;
+        $ataque = ($armadura / $ataque + 3) - $vida;
+    }
+    public function setPoder($dano, $recarga):void
+    {
+
+    }
 }
