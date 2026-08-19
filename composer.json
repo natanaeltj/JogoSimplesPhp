@@ -1,5 +1,5 @@
 {
-    "name": "choco/jogo-simples-php",
+    "name": "sir-insonia/jogo-simples-php",
     "autoload": {
         "psr-4": {
             "Choco\\JogoSimplesPhp\\": "src/"
