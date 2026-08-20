@@ -1,5 +1,7 @@
 <?php
+declare(strict_types = 1);
 
+namespace Choco\JogoSimplesPhp;
 class User
 {
     public string $name;
@@ -7,7 +9,12 @@ class User
     public string $password;
     private $senhaHash;
 
-    public function __construct ();
+    private string $user;
+
+    public function __construct ($login, $senhaHash, $user, $name)
+    {
+        $this->name = $name;
+    }
     public function autenticar()
     {}
 

@@ -10,3 +10,11 @@ se a velocidade de ataque for maior do que a do inimigo ele devera atacar primei
 a defesa divide o ataque do inimigo e soma por 2
 
 poderes deverao ser um objeto e cada classe ira receber 2
+
+ao atacar ex: monstro(atual).vida = (heroi(atual).ataque ou poder / monstro.armadura + 3 ) - monstro vida
+
+Criar uma classe para realizar o login e outra para rodada
+
+    https://drive.google.com/drive/my-drive?hl=pt-br
+
+//So poder lancar um poder forte a cada 5 rodadas e o poder fraco a cada 3
