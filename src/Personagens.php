@@ -8,7 +8,7 @@ abstract class Personagens
     protected int $ataque;
     protected float $vida;
     protected int $armadura;
-    protected array $poder;
+    protected object $poderes;
 
 
     protected function setAtack(int $ataque, float $vida, int $armadura ):void
