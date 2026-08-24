@@ -10,17 +10,20 @@ class User
     private $senhaHash;
 
     private string $user;
+    //user deverá receber personagem
 
-    public function __construct ($login, $senhaHash, $user, $name)
+
+
+ private function __construct ($login, $senhaHash, $user, $name)
     {
         $this->name = $name;
     }
-    public function autenticar()
+    private function autenticar()
     {}
 
-    public function cadastrar()
+    private function cadastrar()
     {}
-    public function login()
+    private function login()
     {}
 
 
