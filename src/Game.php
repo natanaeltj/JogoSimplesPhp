@@ -17,7 +17,7 @@ class Game
     public function play(bool $sair, string $name ): void
 {
     $rodada = new Rodada();
-    $this->name = $name; //não aponta para name de user
+    $this->name = $name;
     while($sair == false){
         echo("Seja bem vindo ao jogo $name. Por favor escolha o seu heroi abaixo: \n");
         echo("Digite 1 para Escolher o espadachim \n");

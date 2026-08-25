@@ -5,18 +5,23 @@ namespace Choco\JogoSimplesPhp;
 class Espadachim extends Herois
 {
 
-    private int $kamusari;
-    private int $onigiri;//adicionar em poderes
+    private object $kamusari;
+    private object $onigiri;
 
-    $poderes 
-
-
-  public function __construct(float $vida = 25.3, int $armadura = 5, int $ataque = 2,  int $kamusari = 3, int $onigiri = 5 ){
+    public function __construct(float $vida = 25.3, int $armadura = 5, int $ataque = 2 ){
       $this->ataque = $ataque;
       $this->vida = $vida;
       $this->armadura = $armadura;
-      $this->kamusari = $kamusari;
-      $this->onigiri = $onigiri;
-  }
+      $this->kamusari = (object) [ //colocar em um arr
+          'dano' => 3,
+          'recarga'  => 5
+          ];
+      $this->onigiri = (object) [
+          'dano' => 5,
+          'recarga'  => 7
+          ];
+      $this->poderes =  [$this->kamusari, $this->onigiri];
+      }
+
 
 }

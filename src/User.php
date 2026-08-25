@@ -6,6 +6,7 @@ class User
 {
     public string $name;
     public int $id ;
+    public object $classe; // classe escolhida de heroi para criar um relacionamento
     public string $password;
     private $senhaHash;
 
@@ -14,7 +15,7 @@ class User
 
 
 
- private function __construct ($login, $senhaHash, $user, $name)
+ private function __construct ($login, $senhaHash, $user, $name )
     {
         $this->name = $name;
     }
