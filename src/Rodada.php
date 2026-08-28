@@ -36,11 +36,11 @@ class Rodada
         echo "Lançar poder - 2\n"; // mostrar lista de poderes e quais estao disponiveis nessa rodada e quanto falta pra lancar um ataque
         echo "Pular turno - 3\n";
         echo "Sair do jogo - 4\n";
-        $opcao = readline("Digite aqui:");
+        $opcao = readline("Digite aqui: ");
 
         switch ($opcao) {
             case 1:
-                echo($this->heroi = $heroi);
+                echo("\natacou {$result()[0]->raca}");
 
             case 2:
                 echo(""); //tem que ter um array de poderes seu animal
@@ -52,18 +52,21 @@ class Rodada
 
         // funcao para atacar, esquivar, funcao para turno e funcao para calcular poder a cada 3 ou 5 rodadas
 
-        private
+
         function atacar()
         {
+            // ao atacar $danoRecebido = $ataque / $armadura + 3.14
         };
 
 
-        private
+
         function lancarPoder()
         {
+
+//            $poder / $armadura + 3.14
         };
 
 
 
 
-    }
+    }}
