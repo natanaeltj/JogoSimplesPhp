@@ -7,6 +7,7 @@ use Choco\JogoSimplesPhp\Goblin;
 use Choco\JogoSimplesPhp\Espadachim;
 use Choco\JogoSimplesPhp\Rodada;
 
+
     $espadachim = new Espadachim();
     $goblin = new Goblin();
 class Game
@@ -16,14 +17,18 @@ class Game
 
     public function play(bool $sair, string $name ): void
 {
+//    $cadastro = new User();
     $rodada = new Rodada();
     $this->name = $name;
+
+//    $cadastro->cadastrar();
+
     while($sair == false){
         echo("Seja bem vindo ao jogo $name. Por favor escolha o seu heroi abaixo: \n");
         echo("Digite 1 para Escolher o espadachim \n");
         //exibir status
         echo("Digite 2 para Escolher o Mago \n");
-        $escolherHeroi = readLine("Digite aqui:");
+        $escolherHeroi = readline("Digite aqui:");
         //exibir status
         if($escolherHeroi ==  "1" || $escolherHeroi == "2") {
             switch($escolherHeroi) {

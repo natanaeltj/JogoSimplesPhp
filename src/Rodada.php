@@ -31,6 +31,9 @@ class Rodada
 
 //        echo "Turno: $turno\n";
         echo "Você encontrou um {$result()[0]->raca}! o que deseja fazer?"; // Apontar para raça no objeto $mostro
+        echo("dano: {$result()[0]->ataque}");
+        echo("dano: {$result()[0]->vida}");
+        echo("dano: {$result()[0]->armadura}");
         echo "\n";
         echo "Lançar ataque - 1\n";
         echo "Lançar poder - 2\n"; // mostrar lista de poderes e quais estao disponiveis nessa rodada e quanto falta pra lancar um ataque
@@ -41,6 +44,7 @@ class Rodada
         switch ($opcao) {
             case 1:
                 echo("\natacou {$result()[0]->raca}");
+
 
             case 2:
                 echo(""); //tem que ter um array de poderes seu animal
