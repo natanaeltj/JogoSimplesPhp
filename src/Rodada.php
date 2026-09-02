@@ -8,7 +8,7 @@ use Choco\JogoSimplesPhp\Goblin;
 use Choco\JogoSimplesPhp\Ogro;
 
 
-class Rodada
+class Rodada // turno, monstro atual, acao do jogador e resultado do combate
 {
 //    private int $turno;
 
@@ -45,22 +45,21 @@ class Rodada
             case 1:
                 echo("\natacou {$result()[0]->raca}");
 
-
             case 2:
                 echo(""); //tem que ter um array de poderes seu animal
-
             case 3:
-
             case 4:
         }
 
         // funcao para atacar, esquivar, funcao para turno e funcao para calcular poder a cada 3 ou 5 rodadas
 
 
-        function atacar()
-        {
-            // ao atacar $danoRecebido = $ataque / $armadura + 3.14
-        };
+//        protected function setAtack(int $ataque, float $vida, int $armadura ):void
+//    {
+//        $this->ataque = $ataque; // quando atacar for selecionado devera puxar o dano total do monstro ou do heroi
+//        $this->vida = $vida;
+//        $ataque = ($armadura / $ataque + 3) - $vida;
+//    }
 
 
 

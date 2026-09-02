@@ -4,8 +4,8 @@ namespace Choco\JogoSimplesPhp;
 
 class Goblin extends Monstros
 {
-    private object $flechada;
-    private object $ataqueCBastao;
+    private static $flechada;
+    private static $ataqueCBastao;
 
 
     public function __construct(string $raca = "Goblin", float $vida = 15.3, int $armadura = 2, int $ataque = 2,){
@@ -14,15 +14,17 @@ class Goblin extends Monstros
         $this->vida = $vida;
         $this->armadura = $armadura;
 
-        $this->ataqueCBastao = (object) [
-            'dano' => 3,
-            'recarga'  => 3
-        ];
-        $this->flechada = (object) [
-            'dano' => 5,
-            'recarga'  => 7
-        ];
-        $this->poderes =  [$this->ataqueCBastao, $this->flechada];
+        if (self::$ataqueCBastao === null) {
+            self::$ataqueCBastao = (object)[
+                'dano' => 3,
+                'recarga' => 3
+            ];
+            self::$flechada = (object)[
+                'dano' => 5,
+                'recarga' => 7
+            ];
+        }
+        $this->poderes =  [self::$ataqueCBastao, self::$flechada];
     }
 
 }
