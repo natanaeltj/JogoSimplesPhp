@@ -9,7 +9,7 @@ class Cadastro extends User
 
 
 
-    public function cadastrar(string $name, object $users, string $id, object $heroiEscolhido, string $password, string $senhaHash, string $user)
+    public function cadastrar()
     {
         $this->name = $name;
         $this->id = $id;

@@ -16,11 +16,11 @@ class Game //escolha do personagem e fluxo do jogo
     private string $opcao;
     public function __construct (){}
 
-    public function play($name) //string $name
+    public function play(string $name) //string $name
 {
     $user = new User();
     $rodada = new Rodada();
-    $sair = true;
+    $sair = false;
 
 
 //    $user->heroiEscolhido = $heroiEscolhido;
@@ -38,16 +38,17 @@ class Game //escolha do personagem e fluxo do jogo
             switch($escolherHeroi) {
                 case "1":
                     $heroiEscolhido = new Espadachim();
+                    $user->escolherHeroi($heroiEscolhido);
                     break;
                     //User push espachim
                 case "2":
                     $heroiEscolhido = new Mago();
+                    $user->escolherHeroi($heroiEscolhido);
                     break;
                 default: null;
             }
-            $user->escolherHeroi($heroiEscolhido);
 
-            $opcao =  readline("Você escolheu $heroiEscolhido \n Digite 1 para iniciar uma rodada ou 2 para o menu:");
+            $opcao =  readline("Você escolheu {$heroiEscolhido->nameClass} \n Digite 1 para iniciar uma rodada ou 2 para o menu:");
         } else{
             echo("Algo deu errado! Por favor escolha o seu heroi abaixo: \n"); //ao iniciar a rodada tem que mandar as opções de personagem escolhido para user
         }
@@ -55,8 +56,6 @@ class Game //escolha do personagem e fluxo do jogo
         if ($opcao){
             $rodada->iniciarTurno(1, "Ogro");
         }
-
-
 
 
 }

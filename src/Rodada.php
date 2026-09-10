@@ -27,10 +27,8 @@ class Rodada // turno, monstro atual, acao do jogador e resultado do combate
             return $monstroEscolhido;
         };
 
-
-
 //        echo "Turno: $turno\n";
-        echo "Você encontrou um {$result()[0]->raca}! o que deseja fazer?"; // Apontar para raça no objeto $mostro
+        echo "Você encontrou um {$result()[0]->nameClass}! o que deseja fazer?"; // Apontar para raça no objeto $mostro
         echo("dano: {$result()[0]->ataque}");
         echo("dano: {$result()[0]->vida}");
         echo("dano: {$result()[0]->armadura}");

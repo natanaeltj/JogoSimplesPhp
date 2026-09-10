@@ -6,6 +6,7 @@ namespace Choco\JogoSimplesPhp;
 abstract class Personagens // ataque, vida, armadura e poderes
 {
 
+    public string $nameClass;
     protected int $ataque;
     protected float $vida;
     protected int $armadura;

@@ -8,8 +8,8 @@ class Goblin extends Monstros
     private static $ataqueCBastao;
 
 
-    public function __construct(string $raca = "Goblin", float $vida = 15.3, int $armadura = 2, int $ataque = 2,){
-        $this->raca = $raca;
+    public function __construct(string $nameClass = "Goblin", float $vida = 15.3, int $armadura = 2, int $ataque = 2,){
+        $this->nameClass = $nameClass;
         $this->ataque = $ataque;
         $this->vida = $vida;
         $this->armadura = $armadura;
