@@ -9,15 +9,12 @@ use Choco\JogoSimplesPhp\Game;
 use Choco\JogoSimplesPhp\Rodada;
 use Choco\JogoSimplesPhp\User;
 
-$espadachim = new Espadachim();
-$goblin = new Goblin();
+
+
 $game = new Game();
-$rodada = new Rodada();
-$cadastro = new User();
 
-//echo($rodada->iniciarTurno());
 
-dump($cadastro());
+dump($game->play("sua mae"));
 
 
 
