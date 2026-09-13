@@ -7,11 +7,12 @@ class Ogro extends Monstros
     private static $lancarRocha;
 
 
-    public function __construct(string $nameClass = "Ogro", float $vida = 15.3, int $armadura = 2, int $ataque = 2){
+    public function __construct(string $nameClass = "Ogro"){
+        $ogro = new Ogro();
+        $ogro->setAtaque(2);
+        $ogro->setVida(15.3);
+        $ogro->setArmor(2);
         $this->nameClass = $nameClass;
-        $this->ataque = $ataque;
-        $this->vida = $vida;
-        $this->armadura = $armadura;
 
         if (self::$martelada === null) {
             self::$martelada = (object)[

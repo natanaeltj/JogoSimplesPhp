@@ -10,11 +10,12 @@ use Choco\JogoSimplesPhp\Rodada;
 use Choco\JogoSimplesPhp\User;
 
 
-
 $game = new Game();
 
-
+//dump($Espadachim);
 dump($game->play("sua mae"));
+
+
 
 
 

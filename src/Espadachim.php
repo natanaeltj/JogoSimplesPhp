@@ -2,17 +2,21 @@
 declare(strict_types=1);
 namespace Choco\JogoSimplesPhp;
 
+use Choco\JogoSimplesPhp\Herois;
+
 class Espadachim extends Herois
 {
-
     private static $kamusari;
     private static $onigiri;
 
-    public function __construct(float $vida = 25.3, int $armadura = 5, int $ataque = 2, string $nameClass = "Espadachim"){
-      $this->ataque = $ataque;
-      $this->vida = $vida;
-      $this->armadura = $armadura;
-      $this->nameClass = $nameClass;
+
+    public function __construct( string $nameClass = "Espadachim" ){
+
+        $this->nameClass = $nameClass;
+        $espadachim->setAtaque(2);
+        $espadachim->setVida(23.3);
+        $espadachim->setArmor(5);
+
         if (self::$kamusari === null) {
             self::$kamusari = (object)[ //colocar em um arr
                 'dano' => 3,
@@ -25,6 +29,7 @@ class Espadachim extends Herois
         }
         $this->poderes =  [self::$kamusari, self::$onigiri];
       }
+
 
 
 }
