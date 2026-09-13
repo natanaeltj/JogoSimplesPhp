@@ -9,11 +9,12 @@ class Mago extends Herois
     private static $descargaEletrica;
 
 
-    public function __construct(string $nameClass = "Mago", float $vida = 19.2, int $armadura = 5, int $ataque = 2 ){
+    public function __construct(string $nameClass = "Mago"){
+        $mago = new Mago();
+        $mago->setAtaque(2);
+        $mago->setVida(19.2);
+        $mago->setArmor(5);
         $this->nameClass = $nameClass;
-        $this->ataque = $ataque;
-        $this->vida = $vida;
-        $this->armadura = $armadura;
 
         if (self::$bolaDeAgua === null) {
             self::$bolaDeAgua = (object)[

@@ -27,7 +27,7 @@ class Game //escolha do personagem e fluxo do jogo
 //    $this->name = $name;
 
     while($sair == false){
-        echo("Seja bem vindo ao jogo $name. Por favor escolha o seu heroi abaixo: \n");
+        echo("Seja bem vindo ao jogo $name. Por favor escolha o seu heroi abaixo: \n"); // tem que ser getName na parte de user
         echo("Digite 1 para Escolher o espadachim \n");
         //exibir status
         echo("Digite 2 para Escolher o Mago \n");
