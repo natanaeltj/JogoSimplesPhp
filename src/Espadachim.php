@@ -13,9 +13,9 @@ class Espadachim extends Herois
     public function __construct( string $nameClass = "Espadachim" ){
 
         $this->nameClass = $nameClass;
-        $espadachim->setAtaque(2);
-        $espadachim->setVida(23.3);
-        $espadachim->setArmor(5);
+        $this->setAtaque(2);
+        $this->setVida(23.3);
+        $this->setArmor(5);
 
         if (self::$kamusari === null) {
             self::$kamusari = (object)[ //colocar em um arr
@@ -29,7 +29,5 @@ class Espadachim extends Herois
         }
         $this->poderes =  [self::$kamusari, self::$onigiri];
       }
-
-
 
 }
