@@ -13,17 +13,19 @@ class Espadachim extends Herois
     public function __construct( string $nameClass = "Espadachim" ){
 
         $this->nameClass = $nameClass;
-        $this->setAtaque(2);
-        $this->setVida(23.3);
-        $this->setArmor(5);
+        $this->setAtaque(7);
+        $this->setVida(28.3);
+        $this->setArmor(6);
 
         if (self::$kamusari === null) {
             self::$kamusari = (object)[ //colocar em um arr
-                'dano' => 3,
+                'nome' => "Kamusari",
+                'dano' => 10,
                 'recarga' => 5
             ];
             self::$onigiri = (object)[
-                'dano' => 5,
+                'nome' => "Onigiri",
+                'dano' => 14,
                 'recarga' => 7
             ];
         }

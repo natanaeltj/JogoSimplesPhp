@@ -6,4 +6,7 @@ abstract class Monstros extends Personagens
 {
     public string $raca;
 
+    public function algoritimo(){
+//        if()
+    }
 }

@@ -12,7 +12,8 @@ use Choco\JogoSimplesPhp\Rodada;
     $goblin = new Goblin();
 class Game //escolha do personagem e fluxo do jogo
 {
-    private string $escolherHeroi; //deve ser um const
+//    public string $name;
+//    private string $escolherHeroi; deve ser um const
     private string $opcao;
     public function __construct (){}
 
@@ -21,13 +22,14 @@ class Game //escolha do personagem e fluxo do jogo
     $user = new User();
     $rodada = new Rodada();
     $sair = false;
+    $user->setName(readline("Insira o seu nome:\n"));
 
 
 //    $user->heroiEscolhido = $heroiEscolhido;
 //    $this->name = $name;
 
     while($sair == false){
-        echo("Seja bem vindo ao jogo $name. Por favor escolha o seu heroi abaixo: \n"); // tem que ser getName na parte de user
+        echo("Seja bem vindo ao jogo {$user->getName()}. Por favor escolha o seu heroi abaixo: \n"); // tem que ser getName na parte de user
         echo("Digite 1 para Escolher o espadachim \n");
         //exibir status
         echo("Digite 2 para Escolher o Mago \n");
@@ -42,13 +44,14 @@ class Game //escolha do personagem e fluxo do jogo
                     break;
                     //User push espachim
                 case "2":
-                    $heroiEscolhido = new Mago();
+                    $user->$heroiEscolhido = new Mago();
                     $user->escolherHeroi($heroiEscolhido);
                     break;
                 default: null;
             }
 
-            $opcao =  readline("Você escolheu {$heroiEscolhido->nameClass} \n Digite 1 para iniciar uma rodada ou 2 para o menu:");
+             echo("Você escolheu {$heroiEscolhido->nameClass} \n");
+            $opcao = readline("Digite 1 para iniciar uma rodada ou 2 para o menu:");
         } else{
             echo("Algo deu errado! Por favor escolha o seu heroi abaixo: \n"); //ao iniciar a rodada tem que mandar as opções de personagem escolhido para user
         }

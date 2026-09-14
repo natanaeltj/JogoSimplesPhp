@@ -9,18 +9,20 @@ class Goblin extends Monstros
 
 
     public function __construct(string $nameClass = "Goblin"){
-        $goblin = new Goblin();
-        $goblin->setAtaque(2);
-        $goblin->setVida(15.3);
-        $goblin->setArmor(2);
         $this->nameClass = $nameClass;
+        $this->setAtaque(6);
+        $this->setVida(19.2);
+        $this->setArmor(5);
+
 
         if (self::$ataqueCBastao === null) {
             self::$ataqueCBastao = (object)[
+                'nome' => "Ataque com bastão",
                 'dano' => 3,
                 'recarga' => 3
             ];
             self::$flechada = (object)[
+                'nome' => "Flechada",
                 'dano' => 5,
                 'recarga' => 7
             ];

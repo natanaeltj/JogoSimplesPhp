@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types = 1);
 namespace Choco\JogoSimplesPhp;
 
 class Mago extends Herois
@@ -10,19 +10,20 @@ class Mago extends Herois
 
 
     public function __construct(string $nameClass = "Mago"){
-        $mago = new Mago();
-        $mago->setAtaque(2);
-        $mago->setVida(19.2);
-        $mago->setArmor(5);
         $this->nameClass = $nameClass;
+        $this->setAtaque(6);
+        $this->setVida(22.2);
+        $this->setArmor(5);
 
         if (self::$bolaDeAgua === null) {
             self::$bolaDeAgua = (object)[
+                'nome' => "Bola de água",
                 'dano' => 10,
-                'recarga' => 5
+                'recarga' => 3
             ];
             self::$descargaEletrica = (object)[
-                'dano' => 15,
+                'nome' => "Descarga Eletrica",
+                'dano' => 17,
                 'recarga' => 7
             ];
         }

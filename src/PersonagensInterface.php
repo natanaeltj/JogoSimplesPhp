@@ -8,5 +8,6 @@ interface PersonagensInterface
     public function getVida(): float;
     public function setVida(float $vida): void;
     public function setArmor(int $armadura): void;
+    public function getArmor(): int;
 
 }

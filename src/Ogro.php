@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 namespace Choco\JogoSimplesPhp;
 
 class Ogro extends Monstros
@@ -8,18 +9,20 @@ class Ogro extends Monstros
 
 
     public function __construct(string $nameClass = "Ogro"){
-        $ogro = new Ogro();
-        $ogro->setAtaque(2);
-        $ogro->setVida(15.3);
-        $ogro->setArmor(2);
         $this->nameClass = $nameClass;
+        $this->setAtaque(8);
+        $this->setVida(30.2);
+        $this->setArmor(6);
+
 
         if (self::$martelada === null) {
             self::$martelada = (object)[
-                'dano' => 7,
-                'recarga' => 7
+                'nome' => "Martelada",
+                'dano' => 9,
+                'recarga' => 8
             ];
             self::$lancarRocha = (object)[
+                'nome' => "Lançar Rocha",
                 'dano' => 10,
                 'recarga' => 9
             ];

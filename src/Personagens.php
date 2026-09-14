@@ -29,6 +29,9 @@ abstract class Personagens implements PersonagensInterface // ataque, vida, arma
     public function setArmor(int $armadura):void{
         $this->armadura = $armadura;
     }
+    public function getArmor():int{
+        return $this->armadura;
+    }
     //public function getDano():void{
      //   $this->vida -= $this->ataque / $this->armadura + 2;
     //}
