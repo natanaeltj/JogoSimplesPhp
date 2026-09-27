@@ -40,12 +40,12 @@ class Game //escolha do personagem e fluxo do jogo
             switch($escolherHeroi) {
                 case "1":
                     $heroiEscolhido = new Espadachim();
-                    $user->escolherHeroi($heroiEscolhido);
+                    $user->setHeroiEscolhido($heroiEscolhido);
                     break;
                     //User push espachim
                 case "2":
-                    $user->$heroiEscolhido = new Mago();
-                    $user->escolherHeroi($heroiEscolhido);
+                    $heroiEscolhido = new Mago();
+                    $user->setHeroiEscolhido($heroiEscolhido);
                     break;
                 default: null;
             }
@@ -57,7 +57,7 @@ class Game //escolha do personagem e fluxo do jogo
         }
 
         if ($opcao){
-            $rodada->iniciarTurno(1, "Ogro");
+            $rodada->iniciarTurno();
         }
 
 

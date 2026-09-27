@@ -12,30 +12,31 @@ class Rodada // turno, monstro atual, acao do jogador e resultado do combate
     public object $result;
 //    private int $turno;
 
-    public function iniciarTurno(object $result): void
+    public function iniciarTurno(): void
     {
+
         $user = new User();
-        $this->result = $result;
+
         $goblin = new Goblin();
         $ogro = new Ogro();
 
-        $result = function () use ($goblin, $ogro) { //Função anonima pode chamar algo que esta fora do escopo
-            $monstros = [$goblin, $ogro];
-            $randomizer = new Randomizer();
+        $monstros = [$goblin, $ogro];
 
-            $monstroEscolhido = $randomizer->shuffleArray($monstros); //Randomizar monstro
-            return $monstroEscolhido;
-        };
+        $randomizer = new Randomizer();
+
+        $monstros = $randomizer->shuffleArray($monstros);
+
+        $this->result = $monstros[0];
 
 //        echo "Turno: $turno\n";
-        echo "Você encontrou um {$result()[0]->nameClass}! o que deseja fazer? \n"; // Apontar para raça no objeto $mostro
+        echo "Você encontrou um {$this->result->nameClass}! o que deseja fazer? \n"; // Apontar para raça no objeto $mostro
         echo("------Status do Inimigo------\n");
-        echo("Dano: {$result()[0]->getAtaque()} \n");
-        echo("Vida: {$result()[0]->getVida()} \n");
-        echo("Armadura: {$result()[0]->getArmor()} \n");
+        echo("Dano: {$this->result->getAtaque()} \n");
+        echo("Vida: {$this->result->getVida()} \n");
+        echo("Armadura: {$this->result->getArmor()} \n");
         echo("------Status do Inimigo------\n");
-        for($rodadaA = 0; $result[0]->getVida == 0 || $user->getHeroiEscolhido()->getVida == 0; $rodadaA++){
-            echo "------| Rodada Atual: {$rodadaA}|------";
+        for($rodadaA = 0; $this->result->getVida == 0 || $user->getHeroiEscolhido()->getVida == 0; $rodadaA++){
+            echo "------| Rodada Atual: {$rodadaA}|------\n";
             echo "Lançar ataque - 1\n";
             echo "Lançar poder - 2\n"; // mostrar lista de poderes e quais estao disponiveis nessa rodada e quanto falta pra lancar um ataque
             echo "Pular turno - 3\n";
@@ -44,8 +45,8 @@ class Rodada // turno, monstro atual, acao do jogador e resultado do combate
 
             switch ($opcao) {
                 case 1:
-                    $result()[0]->setVida( $user->getHeroiEscolhido()->getAtaque - $result[0]->getArmor());
-                    echo("\nAtacou {$result()[0]->nameClass}\n");
+                     //tem que chamar um metodo de ataque
+                    echo("\nAtacou {$this->result->nameClass}\n");
                     break;
 
                 case 2:

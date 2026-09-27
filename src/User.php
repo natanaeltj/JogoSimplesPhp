@@ -12,9 +12,6 @@ class User  //nome, senha e heroi escolhido
 
 
  public function __construct (){}
-    public function escolherHeroi(object $heroi):void{
-     $this->heroiEscolhido = $heroi;
-    }
     public function getName(){
      return $this->name;
     }
@@ -27,9 +24,13 @@ class User  //nome, senha e heroi escolhido
     public function setHeroiEscolhido($heroiEscolhido){
       $this->heroiEscolhido = $heroiEscolhido;
  }
+ function setAtacar(){
+     $this->result->setVida( $user->getHeroiEscolhido()->getAtaque - $result[0]->getArmor()); // tem que pegar o valor de result em rodada para atribuir o dano e  o que garante que o valor da vida dos monstros vai voltar ao valor normal?
+ }
 
+ function setLancarPoder(){
 
-
+ }
 
 
 }
