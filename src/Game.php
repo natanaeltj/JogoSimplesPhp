@@ -28,7 +28,7 @@ class Game //escolha do personagem e fluxo do jogo
 //    $user->heroiEscolhido = $heroiEscolhido;
 //    $this->name = $name;
 
-    while($sair == false){
+    if($sair == false){
         echo("Seja bem vindo ao jogo {$user->getName()}. Por favor escolha o seu heroi abaixo: \n"); // tem que ser getName na parte de user
         echo("Digite 1 para Escolher o espadachim \n");
         //exibir status
@@ -47,7 +47,6 @@ class Game //escolha do personagem e fluxo do jogo
                     $heroiEscolhido = new Mago();
                     $user->setHeroiEscolhido($heroiEscolhido);
                     break;
-                default: null;
             }
 
              echo("Você escolheu {$heroiEscolhido->nameClass} \n");
@@ -57,7 +56,7 @@ class Game //escolha do personagem e fluxo do jogo
         }
 
         if ($opcao){
-            $rodada->iniciarTurno();
+            $rodada->iniciarTurno($user);
         }
 
 

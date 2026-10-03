@@ -11,7 +11,7 @@ class Goblin extends Monstros
     public function __construct(string $nameClass = "Goblin"){
         $this->nameClass = $nameClass;
         $this->setAtaque(6);
-        $this->setVida(19.2);
+        $this->setVida(100);
         $this->setArmor(5);
 
 

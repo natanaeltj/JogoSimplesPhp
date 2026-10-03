@@ -10,42 +10,45 @@ use Choco\JogoSimplesPhp\Ogro;
 class Rodada // turno, monstro atual, acao do jogador e resultado do combate
 {
     public object $result;
+    public int $taMolhada;
 //    private int $turno;
 
-    public function iniciarTurno(): void
+    public function iniciarTurno(User $user): void
     {
-
-        $user = new User();
-
         $goblin = new Goblin();
         $ogro = new Ogro();
-
+        $randomizer = new Randomizer();
         $monstros = [$goblin, $ogro];
 
-        $randomizer = new Randomizer();
 
-        $monstros = $randomizer->shuffleArray($monstros);
+        while (true){
+            $monstrosRodada = $randomizer->shuffleArray($monstros);
+            $this->result = $monstrosRodada[0];
+            $taMolhada = $this->result->getVida();
 
-        $this->result = $monstros[0];
+            echo("Novo inimigo:\n");
+            echo "Você encontrou um {$this->result->nameClass}! o que deseja fazer? \n"; // Apontar para raça no objeto $mostro
 
-//        echo "Turno: $turno\n";
-        echo "Você encontrou um {$this->result->nameClass}! o que deseja fazer? \n"; // Apontar para raça no objeto $mostro
-        echo("------Status do Inimigo------\n");
-        echo("Dano: {$this->result->getAtaque()} \n");
-        echo("Vida: {$this->result->getVida()} \n");
-        echo("Armadura: {$this->result->getArmor()} \n");
-        echo("------Status do Inimigo------\n");
-        for($rodadaA = 0; $this->result->getVida == 0 || $user->getHeroiEscolhido()->getVida == 0; $rodadaA++){
-            echo "------| Rodada Atual: {$rodadaA}|------\n";
+        for($turno = 1; $this->result->getVida() >= 0 || $user->getHeroiEscolhido()->getVida() >= 0; $turno++){ //tem que ser while
+            echo("------Status do Atual------\n");
+            echo("Dano: {$this->result->getAtaque()} \n");
+            echo("Vida: $taMolhada \n"); //nao aparece a vida descendo burro
+            echo("Armadura: {$this->result->getArmor()} \n");
+            echo("------Status do Atual------\n");
+
+
+
+            echo "------| Turno Atual: {$turno}|------\n";
             echo "Lançar ataque - 1\n";
             echo "Lançar poder - 2\n"; // mostrar lista de poderes e quais estao disponiveis nessa rodada e quanto falta pra lancar um ataque
             echo "Pular turno - 3\n";
             echo "Sair do jogo - 4\n";
             $opcao = readline("Digite aqui: ");
+            echo("\n");
 
             switch ($opcao) {
                 case 1:
-                     //tem que chamar um metodo de ataque
+                    $user->setAtacar($this->result);
                     echo("\nAtacou {$this->result->nameClass}\n");
                     break;
 
@@ -54,6 +57,9 @@ class Rodada // turno, monstro atual, acao do jogador e resultado do combate
                     echo("{$user->getHeroiEscolhido()->poderes[0]->name}\n}");
                     echo("{$user->getHeroiEscolhido()->poderes[0]->dano}\n}");
                     echo("{$user->getHeroiEscolhido()->poderes[0]->recarga}\n}");
+
+                    echo("\n");
+
                     echo("------Poder 2------\n");
                     echo("{$user->getHeroiEscolhido()->poderes[1]->name}\n}");
                     echo("{$user->getHeroiEscolhido()->poderes[1]->dano}\n}");
@@ -75,23 +81,17 @@ class Rodada // turno, monstro atual, acao do jogador e resultado do combate
                    }
 
             }
+            if($taMolhada >= 0){
+                echo("O {$this->result->nameClass} morreu!\n");
+                echo("Iniciando uma nova rodada!!\n");
+                break;
+            } elseif ($user->getHeroiEscolhido()->getVida() >= 0){
+                echo("Você morreu!");
+                echo("Iniciando uma nova rodada!!\n");
+                break;
+            };
         }
-        // funcao para atacar, esquivar, funcao para turno e funcao para calcular poder a cada 3 ou 5 rodadas
-
-//        protected function setAtack(int $ataque, float $vida, int $armadura ):void
-//    {
-//        $this->ataque = $ataque; // quando atacar for selecionado devera puxar o dano total do monstro ou do heroi
-//        $this->vida = $vida;
-//        $ataque = ($armadura / $ataque + 3) - $vida;
-//    }
-
-
-        function lancarPoder()
-        {
-
-//            $poder / $armadura + 3.14
-        };
-
+      }
 
 
 

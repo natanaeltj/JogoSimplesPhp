@@ -11,7 +11,7 @@ class Ogro extends Monstros
     public function __construct(string $nameClass = "Ogro"){
         $this->nameClass = $nameClass;
         $this->setAtaque(8);
-        $this->setVida(30.2);
+        $this->setVida(120);
         $this->setArmor(6);
 
 
